@@ -20,7 +20,6 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     ThemesRoutingModule,
     SharedModule,
-    ThemesRoutingModule,
   ]
 })
 export class ThemesModule { }
