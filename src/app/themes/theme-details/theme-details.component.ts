@@ -25,9 +25,7 @@ export class ThemeDetailsComponent implements OnInit {
     this.apiService.getTheme(id).subscribe({
       next: (theme) => {
         this.theme = theme;
-        this.isLoading = false;
-        console.log(this.theme);
-        
+        this.isLoading = false;        
       },
       error: (err) => {
         this.isLoading = false;
