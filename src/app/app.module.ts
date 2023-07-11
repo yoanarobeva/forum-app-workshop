@@ -4,22 +4,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
-import { MainComponent } from './main/main.component';
-import { ThemesListComponent } from './themes-list/themes-list.component';
-import { PostsListComponent } from './posts-list/posts-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
 import { AuthModule } from './auth/auth.module';
 import { ThemesModule } from './themes/themes.module';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainComponent,
-    ThemesListComponent,
-    PostsListComponent,
+    HomeComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, CoreModule, SharedModule, HttpClientModule, AuthModule, ThemesModule],
+  imports: [BrowserModule, HttpClientModule, CoreModule, SharedModule, AuthModule, ThemesModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })
