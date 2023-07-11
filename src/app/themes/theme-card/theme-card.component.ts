@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { ApiService } from 'src/app/api.service';
 import { AuthService } from 'src/app/auth/auth.service';
 import { Theme } from 'src/app/types';
 
@@ -13,14 +14,15 @@ export class ThemeCardComponent {
 
   @Input('theme') theme!: Theme;
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private apiService: ApiService) {}
 
   get isLoggedIn(): boolean {
     return this.authService.isLogged;
   }
 
-  subscribe() {
+  subscribe(themeId: string) {
     this.isSubscribed = !this.isSubscribed;
     //TODO: add subscriber to DB
+    // this.apiService.subscribeToTheme(themeId);
   }
 }

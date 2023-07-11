@@ -11,7 +11,7 @@
         </div>
     </div>
     <div class="footer">
-        <i *ngIf="isLoggedIn" (click)="like()" [ngClass]="!isLiked ? 'fas fa-thumbs-up' : 'fas fa-thumbs-down'"></i>
+        <i *ngIf="isLoggedIn" (click)="like(post._id)" [ngClass]="!isLiked ? 'fas fa-thumbs-up' : 'fas fa-thumbs-down'"></i>
         <p><span>{{post.likes.length}}</span> likes</p>
     </div>
 </div>
