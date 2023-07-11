@@ -31,7 +31,7 @@
       <li>
         <a routerLink="/themes">Themes</a>
       </li>
-      <li>
+      <li *ngIf="isLoggedIn">
         <a routerLink="/add-theme">New Theme</a>
       </li>
     </ul>
