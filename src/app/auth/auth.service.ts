@@ -4,6 +4,7 @@ import { User } from '../types';
 @Injectable({
   providedIn: 'root'
 })
+
 export class AuthService {
   user: User | undefined;
   USER_KEY = '[user]'
