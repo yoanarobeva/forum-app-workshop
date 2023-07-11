@@ -7,6 +7,7 @@ import { PostsListComponent } from './posts-list/posts-list.component';
 import { ThemesListComponent } from './themes-list/themes-list.component';
 import { SharedModule } from '../shared/shared.module';
 import { RouterModule } from '@angular/router';
+import { ThemeCardComponent } from './theme-card/theme-card.component';
 
 
 
@@ -16,6 +17,7 @@ import { RouterModule } from '@angular/router';
     AllThemesComponent,
     PostsListComponent,
     ThemesListComponent,
+    ThemeCardComponent,
   ],
   imports: [
     CommonModule,

@@ -10,6 +10,7 @@ import { Theme } from '../../types/theme';
 export class ThemesListComponent implements OnInit {
   themes: Theme[] = [];
   isLoading: boolean = true;
+  isSubscribed: boolean = false;
 
   constructor(private apiService: ApiService) {}
 
