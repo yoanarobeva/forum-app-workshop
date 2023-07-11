@@ -6,6 +6,7 @@ import { AllThemesComponent } from './all-themes/all-themes.component';
 import { PostsListComponent } from './posts-list/posts-list.component';
 import { ThemesListComponent } from './themes-list/themes-list.component';
 import { SharedModule } from '../shared/shared.module';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -18,6 +19,7 @@ import { SharedModule } from '../shared/shared.module';
   ],
   imports: [
     CommonModule,
+    RouterModule,
     ThemesRoutingModule,
     SharedModule,
   ]
