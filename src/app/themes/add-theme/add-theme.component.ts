@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,5 +13,15 @@ export class AddThemeComponent {
 
   goHome() {
     this.router.navigate(["/"]);
+  }
+
+  submitHandler (form: NgForm) {
+    if (form.invalid) {
+      return;
+    }
+
+    console.log(form.value);
+    
+    this.goHome();
   }
 }
