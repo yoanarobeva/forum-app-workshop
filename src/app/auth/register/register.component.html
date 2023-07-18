@@ -81,6 +81,12 @@
         />
       </p>
 
+      <ng-container *ngIf="form.get('tel')?.touched">
+        <p class="error" *ngIf="form.get('tel')?.errors?.['required']">
+          Phone is required!
+        </p>
+      </ng-container>
+
       <ng-container formGroupName="passGroup">
         <!-- password -->
         <p class="field field-icon">

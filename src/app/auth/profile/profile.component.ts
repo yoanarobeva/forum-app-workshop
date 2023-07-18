@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-profile',
@@ -6,5 +7,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent {
+  editModeActivated: boolean = false;
 
+  toggleModes() {
+    this.editModeActivated = !this.editModeActivated;
+  }
+
+  submitHandler(form: NgForm) {
+    if(form.invalid) {
+      return;
+    }
+
+    this.toggleModes();
+
+    console.log(form.value);
+    
+  }
 }
