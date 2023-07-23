@@ -6,17 +6,17 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
-import { AuthModule } from './auth/auth.module';
-import { ThemesModule } from './themes/themes.module';
 import { HomeComponent } from './home/home.component';
 import { appInterceptorProvider } from './app.interceptor';
+import { AuthenticateComponent } from './authenticate/authenticate.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    AuthenticateComponent,
   ],
-  imports: [BrowserModule, HttpClientModule, CoreModule, SharedModule, AuthModule, ThemesModule, AppRoutingModule],
+  imports: [BrowserModule, HttpClientModule, CoreModule, SharedModule, AppRoutingModule],
   providers: [appInterceptorProvider],
   bootstrap: [AppComponent],
 })

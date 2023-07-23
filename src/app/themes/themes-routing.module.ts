@@ -5,24 +5,19 @@ import { ThemeDetailsComponent } from './theme-details/theme-details.component';
 import { AddThemeComponent } from './add-theme/add-theme.component';
 
 const routes: Routes = [
-    {
-        path: 'themes',
-        children: [
-            {
-                path: '',
-                pathMatch: 'full',
-                component: AllThemesComponent,
-            },
-            {
-                path: ':themeId',
-                component: ThemeDetailsComponent,
-            }
-        ]
+    {  
+        path: '',
+        pathMatch: 'full',
+        component: AllThemesComponent,
     },
     {
         path: 'add-theme',
         component: AddThemeComponent,
-    }
+    },
+    {
+        path: ':themeId',
+        component: ThemeDetailsComponent,
+    },
 ];
 
 @NgModule({

@@ -22,10 +22,10 @@ export class HeaderComponent {
   logout() {
     this.authService.logout().subscribe({
       next: () => {
-        this.router.navigate(['/login'])
+        this.router.navigate(['/auth/login'])
       },
       error: (err) => {
-        this.router.navigate(['/login'])
+        this.router.navigate(['/auth/login'])
       },
     });
   }
