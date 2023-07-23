@@ -34,14 +34,16 @@ export class RegisterComponent {
     private fb: FormBuilder,
   ) {}
 
-  register() {
+  register(): void{
     if(this.form.invalid) {
       return;
     }
+    
+    const {username, email, tel, passGroup} = this.form.value;
+    const {password, rePassword} = passGroup!;
 
-    console.log(this.form.value);
-
-    this.authService.login();
-    this.router.navigate(['/']);
+    this.authService.register(username!, email!, tel!, password!, rePassword!).subscribe(() => {
+      this.router.navigate(['/login']);
+    });
   }
 }

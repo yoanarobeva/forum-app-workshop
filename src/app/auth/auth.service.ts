@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { User } from '../types';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class AuthService {
     return !!this.user;
   }
 
-  constructor() {
+  constructor(private http: HttpClient) {
     try {
       const isUser = localStorage.getItem(this.USER_KEY) || '';
       this.user = JSON.parse(isUser);
@@ -22,13 +23,19 @@ export class AuthService {
     }
   }
 
-  login(): void {
-    this.user = {
-      email: 'john.doe@gmail.com',
-      firstName: 'John',
-    };
+  register(username: string, email: string, tel: string, password: string, rePassword: string) {
+    return this.http.post('/api/register', {username, email, tel, password, rePassword});
+  }
 
-    localStorage.setItem(this.USER_KEY, JSON.stringify(this.user));
+  login(email: string, password: string) {
+    // this.user = {
+    //   email: 'john.doe@gmail.com',
+    //   firstName: 'John',
+    // };
+
+    // localStorage.setItem(this.USER_KEY, JSON.stringify(this.user));
+    
+    return this.http.post('/api/login', {email, password})
   }
 
   logout(): void {

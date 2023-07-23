@@ -10,38 +10,38 @@ export class ApiService {
   constructor(private http: HttpClient) {}
 
   getTheme(themeId: string) {
-    const { appUrl } = environment;
-    return this.http.get<Theme>(`${appUrl}/themes/${themeId}`);
+    const { apiUrl } = environment;
+    return this.http.get<Theme>(`${apiUrl}/themes/${themeId}`);
   }
 
   postTheme(newPostData: Post) {
-    const { appUrl } = environment;
-    return this.http.post(`${appUrl}/themes`, newPostData);
+    const { apiUrl } = environment;
+    return this.http.post(`${apiUrl}/themes`, newPostData);
   } 
 
   subscribeToTheme(themeId: string) {
-    const { appUrl } = environment;
+    const { apiUrl } = environment;
     // TODO: check if this is the body of the request!!!
-    return this.http.put<Theme>(`${appUrl}/themes/${themeId}`, {
+    return this.http.put<Theme>(`${apiUrl}/themes/${themeId}`, {
       subscribers: themeId,
     });
   }
 
   likeThemePost(postId: string) {
-    const { appUrl } = environment;
+    const { apiUrl } = environment;
     // TODO: check if this is the body of the request!!!
-    return this.http.put<Post>(`${appUrl}/likes/${postId}`, postId);
+    return this.http.put<Post>(`${apiUrl}/likes/${postId}`, postId);
   }
 
   getThemes() {
-    const { appUrl } = environment;
-    return this.http.get<Theme[]>(`${appUrl}/themes`);
+    const { apiUrl } = environment;
+    return this.http.get<Theme[]>(`${apiUrl}/themes`);
   }
 
   getPosts(limit?: number) {
-    const { appUrl } = environment;
+    const { apiUrl } = environment;
     return this.http.get<Post[]>(
-      `${appUrl}/posts${limit ? `?limit=${limit}` : ''}`
+      `${apiUrl}/posts${limit ? `?limit=${limit}` : ''}`
     );
   }
 }

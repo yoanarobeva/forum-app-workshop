@@ -27,9 +27,11 @@ export class LoginComponent {
     if (this.form.invalid) {
       return;
     }
-    console.log(this.form.value);
+    const {email, password} = this.form.value;
+    console.log(email, password);
     
-    this.authService.login();
-    this.router.navigate(['/']);
+    this.authService.login(email!, password!).subscribe(() => {
+      this.router.navigate(['/themes']);
+    });
   }
 }
