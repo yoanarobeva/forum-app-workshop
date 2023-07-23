@@ -41,9 +41,9 @@ export class RegisterComponent {
     
     const {username, email, tel, passGroup} = this.form.value;
     const {password, rePassword} = passGroup!;
-
-    this.authService.register(username!, email!, tel!, password!, rePassword!).subscribe(() => {
-      this.router.navigate(['/login']);
+    
+    this.authService.register(username!, email!, password!, rePassword!, tel!).subscribe(() => {
+      this.router.navigate(['/themes']);
     });
   }
 }

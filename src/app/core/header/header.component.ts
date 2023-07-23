@@ -15,12 +15,18 @@ export class HeaderComponent {
     return this.authService.isLogged;
   }
 
-  get firstName(): string {
-    return this.authService.user?.firstName || '';
+  get username(): string {
+    return this.authService.user?.username || '';
   }
 
   logout() {
-    this.authService.logout();
-    this.router.navigate(['/']);
+    this.authService.logout().subscribe({
+      next: () => {
+        this.router.navigate(['/login'])
+      },
+      error: (err) => {
+        this.router.navigate(['/login'])
+      },
+    });
   }
 }
