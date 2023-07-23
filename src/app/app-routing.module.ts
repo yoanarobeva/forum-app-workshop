@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from './core/not-found/not-found.component';
 import { HomeComponent } from './home/home.component';
+import { ErrorComponent } from './core/error/error.component';
 
 const routes: Routes = [
   {
@@ -20,6 +21,10 @@ const routes: Routes = [
   {
     path: 'themes',
     loadChildren: () => import('./themes/themes.module').then(m => m.ThemesModule),
+  },
+  {
+    path: 'error',
+    component: ErrorComponent,
   },
   {
     path: '**', 
