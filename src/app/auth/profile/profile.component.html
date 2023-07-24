@@ -4,15 +4,15 @@
         <ng-container *ngIf="!editModeActivated">
             <div class="flex">
                 <p>Username: </p>
-                <p>Johny</p>
+                <p>{{profileDetails.username}}</p>
             </div>
             <div class="flex">
                 <p>Email: </p>
-                <p>john.doe@gmail.com</p>
+                <p>{{profileDetails.email}}</p>
             </div>
             <div class="flex">
                 <p>Phone: </p>
-                <p>+359 885 888 888</p>
+                <p>+359 {{profileDetails.tel}}</p>
             </div>
             <button class="edit-button" (click)="toggleModes()">Edit</button>
         </ng-container>
@@ -21,7 +21,7 @@
             <form #form="ngForm" (ngSubmit)="submitHandler(form)">
                 <div class="flex">
                     <p>Username: </p>
-                    <input type="text" name="username" id="username" value="Johny" ngModel #inputUsername="ngModel" required minlength="5">
+                    <input type="text" name="username" id="username" value="Johny" [(ngModel)]="profileDetails.username" #inputUsername="ngModel" required minlength="5">
                 </div>
                 <ng-container *ngIf="inputUsername?.touched">
                     <p class="error" *ngIf="inputUsername.errors?.['required']">
@@ -34,7 +34,7 @@
 
                 <div class="flex">
                     <p>Email: </p>
-                    <input type="email" name="email" id="email" value="john.doe@gmail.com" ngModel #inputEmail="ngModel" required EmailDirective>
+                    <input type="email" name="email" id="email" value="john.doe@gmail.com" [(ngModel)]="profileDetails.email" #inputEmail="ngModel" required EmailDirective>
                 </div>
 
                 <ng-container *ngIf="inputEmail.touched">
@@ -48,7 +48,7 @@
                         <select name="select-tel" id="select-tel" class="tel">
                             <option value="00359">+359</option>
                         </select>
-                        <input type="text" name="tel" id="tel" value="885 888 888" ngModel #inputTel="ngModel" required>
+                        <input type="text" name="tel" id="tel" value="885 888 888" [(ngModel)]="profileDetails.tel" #inputTel="ngModel" required>
                     </div>
                 </div>
 
