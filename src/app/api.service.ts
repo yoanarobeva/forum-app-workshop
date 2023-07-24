@@ -20,11 +20,7 @@ export class ApiService {
   } 
 
   subscribeToTheme(themeId: string) {
-    const { apiUrl } = environment;
-    // TODO: check if this is the body of the request!!!
-    return this.http.put<Theme>(`${apiUrl}/themes/${themeId}`, {
-      subscribers: themeId,
-    });
+    return this.http.put(`/api/themes/${themeId}`, {});
   }
 
   likeThemePost(postId: string) {

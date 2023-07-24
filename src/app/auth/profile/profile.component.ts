@@ -15,14 +15,15 @@ export class ProfileComponent implements OnInit{
     username: '',
     email: '',
     tel: '',
+    _id: '',
   }
 
   constructor(private authService: AuthService) {};
 
   ngOnInit(): void {
-    const {username, email, tel} = this.authService.user!;
+    const {username, email, tel, _id} = this.authService.user!;
 
-    this.profileDetails = {username, email, tel};
+    this.profileDetails = {username, email, tel, _id,};
     
   }
 
