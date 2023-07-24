@@ -24,9 +24,7 @@ export class ApiService {
   }
 
   likeThemePost(postId: string) {
-    const { apiUrl } = environment;
-    // TODO: check if this is the body of the request!!!
-    return this.http.put<Post>(`${apiUrl}/likes/${postId}`, postId);
+    return this.http.put(`/api/likes/${postId}`, {});
   }
 
   getThemes() {
