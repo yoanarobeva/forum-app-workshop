@@ -20,7 +20,6 @@ export class ProfileComponent {
 
     this.toggleModes();
 
-    console.log(form.value);
     
   }
 }

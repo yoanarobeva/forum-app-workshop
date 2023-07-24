@@ -6,17 +6,17 @@ import { Theme, Post } from './types';
 @Injectable({
   providedIn: 'root',
 })
+
 export class ApiService {
   constructor(private http: HttpClient) {}
-
+   
   getTheme(themeId: string) {
     const { apiUrl } = environment;
     return this.http.get<Theme>(`${apiUrl}/themes/${themeId}`);
   }
 
-  postTheme(newPostData: Post) {
-    const { apiUrl } = environment;
-    return this.http.post(`${apiUrl}/themes`, newPostData);
+  postTheme(themeName: string, postText: string) {
+    return this.http.post<Theme>('/api/themes', {themeName, postText});
   } 
 
   subscribeToTheme(themeId: string) {

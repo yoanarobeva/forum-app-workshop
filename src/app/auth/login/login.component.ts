@@ -28,7 +28,6 @@ export class LoginComponent {
       return;
     }
     const {email, password} = this.form.value;
-    console.log(email, password);
     
     this.authService.login(email!, password!).subscribe(() => {
       this.router.navigate(['/themes']);
